@@ -10,43 +10,44 @@
 
             <form class="form" method="POST">
                 <div class="form-group">
-                    <label for="nameTextField">Book Title</label>
+                    <label for="nameTextField">Course</label>
                     <input type="text" class="form-control"
-                    id="nameTextField"
-                    placeholder="Enter the Book Title"
-                    name="Name" required>
+                    id="courseTextField"
+                    placeholder="Enter the Course"
+                    name="Course" 
+                    value="<%= Task.Course %>"
+                    required>
                 </div>
 
                 <div class="form-group">
-                    <label for="authorTextField">Author</label>
+                    <label for="authorTextField">Task</label>
                     <input type="text" class="form-control"
-                    id="authorTextField"
-                    placeholder="Enter the Book's Author"
-                    name="Author" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="publishedTextField">Year</label>
-                    <input type="text" class="form-control"
-                    id="publishedTextField"
-                    placeholder="Enter the Year of Publication"
-                    name="Published" required>
+                    id="taskTextField"
+                    placeholder="Enter the Task"
+                    name="Task" 
+                    value="<%= Task.Task %>"
+                    required>
                 </div>
 
                 <div class="form-group">
                     <label for="descriptionTextArea">Description</label>
                     <textarea type="text" class="form-control"
                     id="descriptionTextArea"
-                    placeholder="Enter the a brief description of the book"
-                    name="Description" required></textarea>
+                    placeholder="Enter the a brief description of the task"
+                    name="Description" 
+                    required>
+                    <%= Book.Description %>
+                    </textarea>
                 </div>
 
                 <div class="form-group">
-                    <label for="priceTextField">Price</label>
+                    <label for="priceTextField">Deadline</label>
                     <input type="text" class="form-control"
-                    id="priceTextField"
-                    placeholder="Enter the Book's Price"
-                    name="Price" required>
+                    id="deadlineTextField"
+                    placeholder="Enter the Deadline"
+                    name="Deadline" 
+                    value="<%= Book.Deadline %>"
+                    required>
                 </div>
 
                 <button class="btn btn-primary" type="submit">
@@ -60,7 +61,6 @@
 
     </div>
 </div>
-
 
 
 <%- include ../partials/bottom_nav.ejs %>  

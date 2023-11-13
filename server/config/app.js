@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, '../../node_modules')));
 let mongoose = require('mongoose');
 let mongoDB = mongoose.connection;
 let DB = require('./db');
-// mongoose.connect('mongodb://127.0.0.1:27017/BookLib');
+// mongoose.connect('mongodb://127.0.0.1:27017/WorkTracker');
 mongoose.connect(DB.URI);
 mongoDB.on('error', console.error.bind(console, 'Connection Error'));
 mongoDB.once('open', ()=>{console.log("MongoDB is connected")});
@@ -33,11 +33,11 @@ mongoDB.once('open', ()=>{console.log("MongoDB is connected")});
 /* related to the routers */
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
-let BooksRouter = require('../routes/bio_books');
+let TrackerRouter = require('../routes/Tracker');
 
 app.use('/', indexRouter); //localhost:4000
 app.use('/users', usersRouter);//localhost:4000/users
-app.use('/bookslist', BooksRouter);
+app.use('/Tracklist', TrackerRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
