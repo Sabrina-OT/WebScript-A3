@@ -4,7 +4,7 @@ let Task = require('../models/Tracker');
 
 module.exports.displayTasklist = async (req, res, next) => {
     try{
-        const TrackList = await Track.find();
+        const TaskList = await Task.find();
         res.render('track/list', {
             title: "Track List",
             TrackList: TrackList
@@ -43,7 +43,7 @@ module.exports.ProcessTask = (req, res, next) => {
             "Deadline": req.body.Deadline
         });
         Task.create(newTask).then(() => {
-            res.redirect('/Tracklist')
+            res.redirect('/tracklist')
         })
     }
 
@@ -85,7 +85,7 @@ module.exports.ProcessEditTask = (req, res, next) => {
             "Deadline": req.body.Deadline
         })
         Task.findByIdAndUpdate(id, updatedTask).then(() =>{
-            res.redirect('/Tracklist')
+            res.redirect('/tracklist')
         });
     }
     catch(err){
@@ -101,7 +101,7 @@ module.exports.DeleteTask = async (req, res, next) => {
         let id = req.params.id;
         Task.deleteOne({_id:id}).then(() =>
         {
-            res.redirect('/Tracklist')
+            res.redirect('/tracklist')
         })
     }
     catch(err){

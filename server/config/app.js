@@ -35,9 +35,9 @@ let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
 let TrackerRouter = require('../routes/Tracker');
 
-app.use('/', indexRouter); //localhost:4000
-app.use('/users', usersRouter);//localhost:4000/users
-app.use('/Tracklist', TrackerRouter);
+app.use('/', indexRouter); //localhost:5000
+app.use('/users', usersRouter);//localhost:5000/users
+app.use('/tracklist', TrackerRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

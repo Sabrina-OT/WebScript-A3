@@ -4,7 +4,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { 
-    title: 'Home'});
+    title: 'My Work Tracker'});
 });
 
 /* GET home page. */
@@ -13,11 +13,10 @@ router.get('/home', function(req, res, next) {
     title: 'My Work Tracker'});
 });
 
-module.exports = router;
+/* GET track page. */
+router.get('/tracklist', function(req, res, next) {
+  res.render('../views/track/list', { 
+    title: 'Tracker'});
+});
 
-/* 
-MVC --> Model View Controller 
-model --> to connect our logic
-view --> pages
-controller --> logic behind our routes
-*/
+module.exports = router;
