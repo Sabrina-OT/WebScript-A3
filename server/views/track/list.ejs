@@ -2,39 +2,42 @@
 <%- include ../partials/main_nav.ejs %>
 
 <link href="../Content/app2.css" rel="stylesheet" type="text/css">
+<br>
 
 <main class = "container">
     <div class = "row">
         <div class = "offset-md-1 col-md-10">
             <h1><% title %></h1>
 
-            <a href="/tracklist/add" class="btn btn-primary" role="button"><i class="fas fa-plus-circle"></i>Add Task</a>
+            <a href="/tracklist/add" class="btn btn-primary" role="button"><i class="fas fa-plus-circle"></i> Add Task</a>
 
+        <br>
         <br>
         <table class = "table table-bordered table-striped table-hover">
             <tr class = "d-flex">
                 <th class = "text-center col-2">Course</th>
                 <th class = "text-center col-2">Task</th>
                 <th class = "text-center col-4">Description</th>
-                <th class = "text-center col-1">Deadline</th>
+                <th class = "text-center col-2">Deadline</th>
+                <th class = "text-center col-2"></th>
             </tr>
 
-            <% for(let count=0;count<TrackList.length;count++) { %>
+            <% for(let count=0;count<TaskList.length;count++) { %>
             <tr class = "d-flex">
-                <td class = "text-center col-2"><%= Tracklist[count].Course %></td>
-                <td class = "text-center col-2"><%= Tracklist[count].Task %></td>
-                <td class = "text-center col-4"><%= Tracklist[count].Description %></td>
-                <td class = "text-center col-1"><%= Tracklist[count].Deadline %></td>
+                <td class = "text-center col-2"><%= TaskList[count].Course %></td>
+                <td class = "text-center col-2"><%= TaskList[count].Task %></td>
+                <td class = "text-center col-4"><%= TaskList[count].Description %></td>
+                <td class = "text-center col-2"><%= TaskList[count].Deadline %></td>
 
                 <td class="text-center col-1">
-                    <a href="/tracklist/edit/<%= TrackList[count]._id %>" 
+                    <a href="/tracklist/edit/<%= TaskList[count]._id %>" 
                         class="btn btn-primary btn-sm">
                         <i class = "fas fa-pencil-alt"></i>Edit
                         </a>
                 </td>
 
                 <td class="text-center col-1">
-                    <a href="/tracklist/delete/<%= TrackList[count]._id %>" 
+                    <a href="/tracklist/delete/<%= TaskList[count]._id %>" 
                         class="btn btn-danger btn-sm">
                         <i class = "fas trash-alt"></i>Delete
                         </a>

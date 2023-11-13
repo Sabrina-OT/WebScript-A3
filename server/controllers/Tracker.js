@@ -7,7 +7,7 @@ module.exports.displayTasklist = async (req, res, next) => {
         const TaskList = await Task.find();
         res.render('track/list', {
             title: "Track List",
-            TrackList: TrackList
+            TaskList: TaskList
         });
     }
     catch(err){
