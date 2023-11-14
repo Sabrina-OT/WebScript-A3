@@ -1,8 +1,8 @@
 <%- include ../partials/header.ejs %>
 <%- include ../partials/main_nav.ejs %>
-
-<link href="../Content/app2.css" rel="stylesheet" type="text/css">
 <br>
+
+<link href="../Content/app.css" rel="stylesheet" type="text/css">
 
 <main class = "container">
     <div class = "row">
@@ -36,9 +36,9 @@
                         </a>
                 </td>
 
-                <td class="text-center col-1">
+                <td class="text-center col-1" onclick="checker()">
                     <a href="/tracklist/delete/<%= TaskList[count]._id %>" 
-                        class="btn btn-danger btn-sm">
+                        class="btn btn-danger btn-s">
                         <i class = "fas trash-alt"></i>Delete
                         </a>
                 </td>
@@ -48,6 +48,29 @@
         </table>
     </div>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script>
+    function checker()
+    {
+        var result = confirm('Confirm Deletion?');
+        if (result == false) {
+            event.preventDefault();
+        }
+    }
+    </script>
 </main>
 
 <%- include ../partials/bottom_nav.ejs %>

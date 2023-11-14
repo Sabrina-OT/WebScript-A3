@@ -3,6 +3,20 @@
 body
 { 
     background: #0378A6; 
+    background: -moz-linear-gradient(top, #011C40 0%, #0378A6 100%); 
+    background: -webkit-linear-gradient(top, #011C40 0%, #0378A6 100%); 
+    background: -o-linear-gradient(top, #011C40 0%, #0378A6 100%); 
+    background: linear-gradient(to bottom, #011C40 0%,#0378A6 100%); 
     color: white;
     text-align: center;
 }
+
+#welcome 
+{
+    padding: 50px;
+    margin: 150px;
+    font-size: 4.5em; 
+    border-radius: 25px;
+    border: 5px solid #ffffff;
+  }
+  

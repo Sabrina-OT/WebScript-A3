@@ -1,12 +1,15 @@
 <%- include ../partials/header.ejs %>
-
 <%- include ../partials/main_nav.ejs %>
+
+<link href="../Content/app.css" rel="stylesheet" type="text/css">
+<br>
 
 <!-- Content for the Add page -->
 <div class="container">
     <div class="row">
         <div class="offset-md-3 col-md-6">
             <h1><%= title %></h1>
+            <br>
 
             <form class="form" method="POST">
                 <div class="form-group">
@@ -17,6 +20,8 @@
                     name="Course" required>
                 </div>
 
+                <br>
+
                 <div class="form-group">
                     <label for="authorTextField">Task</label>
                     <input type="text" class="form-control"
@@ -25,13 +30,17 @@
                     name="Task" required>
                 </div>
 
+                <br>
+
                 <div class="form-group">
                     <label for="descriptionTextArea">Description</label>
                     <textarea type="text" class="form-control"
                     id="descriptionTextArea"
-                    placeholder="Enter the a brief description of the book"
+                    placeholder="Enter a Description"
                     name="Description" required></textarea>
                 </div>
+
+                <br>
 
                 <div class="form-group">
                     <label for="priceTextField">Deadline</label>
@@ -41,20 +50,24 @@
                     name="Deadline" required>
                 </div>
 
+                <br>
+                <br>
+
                 <button class="btn btn-primary" type="submit">
                     <i class="fas fa-edit"></i> Submit</button>
                 
-                    <a href="/bookslist" class="btn btn-warning">
+                    <a href="/tracklist" class="btn btn-warning">
                         <i class="fas fa-undo"></i> Cancel</a>
 
             </form>
         </div>
 
     </div>
+
+    <br>
+    <br>
+    <br>
 </div>
 
-
-
 <%- include ../partials/bottom_nav.ejs %>  
-
 <%- include ../partials/footer.ejs %>
