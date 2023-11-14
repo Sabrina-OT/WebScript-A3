@@ -7,8 +7,8 @@ body
     background: -webkit-linear-gradient(top, #011C40 0%, #0378A6 100%); 
     background: -o-linear-gradient(top, #011C40 0%, #0378A6 100%); 
     background: linear-gradient(to bottom, #011C40 0%,#0378A6 100%); 
-    color: white;
-    text-align: center;
+    color: white !important;
+    text-align: center !important; 
 }
 
 #welcome 
