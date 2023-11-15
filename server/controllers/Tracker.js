@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 let Task = require('../models/Tracker');
 
+// module for displaying the task list
 module.exports.displayTasklist = async (req, res, next) => {
     try{
         const TaskList = await Task.find();
@@ -18,7 +19,7 @@ module.exports.displayTasklist = async (req, res, next) => {
     }
 };
 
-
+// module for adding new tasks into the tasklist
 module.exports.AddTask = (req, res, next) => {
     try{
         res.render('track/add',
@@ -34,6 +35,7 @@ module.exports.AddTask = (req, res, next) => {
     }
 };
 
+// module for processing new tasks to be added
 module.exports.ProcessTask = (req, res, next) => {
     try{
         let newTask = Task({
@@ -55,6 +57,7 @@ module.exports.ProcessTask = (req, res, next) => {
     }
 };
 
+// module for editing tasks displayed in the table
 module.exports.EditTask = async (req, res, next) => {
     try{
         const id = req.params.id;
@@ -74,6 +77,7 @@ module.exports.EditTask = async (req, res, next) => {
     
 };
 
+//module for processing edited tasks to be displayed in the table
 module.exports.ProcessEditTask = (req, res, next) => {
     try{
         const id = req.params.id;
@@ -96,6 +100,7 @@ module.exports.ProcessEditTask = (req, res, next) => {
     }
 };
 
+// module for deleting tasks in the table
 module.exports.DeleteTask = async (req, res, next) => {
     try{
         let id = req.params.id;
